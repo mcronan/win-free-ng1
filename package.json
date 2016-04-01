@@ -1,0 +1,13 @@
+{
+  "name": "win-free-heroku",
+  "description": "Our sample Node to Heroku app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+	"dependencies": {
+		"express": "^4",
+		"jade": "^1",
+		"body-parser": "^1"
+	}
+}

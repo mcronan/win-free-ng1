@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	body(ng-controller="aboutController")
+
+	h1 This is the about page
+
+	h2 {{message}}
+
+	div(ng-view)
+
+	a(href="/auth/facebook">Login with Facebook)
+
+
