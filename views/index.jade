@@ -1,7 +1,14 @@
 extends layout
-	//- div(ng-controller="winController")
+
 block content
-	h1 Hello Boulder!
+
+	div(ng-controller="landingController")
+
+		h1 Hello Boulder!
+
 		//- {{message}}
-	
-	div(ng-view)
+
+		button.btn.btn-default(type="button")
+			a(href="form") Sign-up in 15 seconds!
+
+		//- div(ng-view)

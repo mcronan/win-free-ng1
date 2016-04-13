@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+	div(ng-controller="videoController")
+
+		h1 De Video
+
+		{{message}}
+
+		.row
+			.col-sm-12
+				h2.center  Watch the ads and you'll be entered in the raffle! 
+		.row
+			.col-sm-12
+				iframe.center-block(width='560', height='315', src='https://www.youtube.com/embed/ilxaXpjrza8', frameborder='0', allowfullscreen='')

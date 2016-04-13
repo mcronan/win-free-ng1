@@ -1,14 +1,15 @@
 extends layout
 
 block content
-	body(ng-controller="aboutController")
 
-	h1 This is the about page
+	div(ng-controller="aboutController")
 
-	h2 {{message}}
+		h1 This is the about page
 
-	div(ng-view)
+		h2 {{message}}
 
-	a(href="/auth/facebook">Login with Facebook)
+		
 
-
+		//- a(href='/auth/facebook')
+		//- 	span.fa.fa-facebook
+		//- 	|  Facebook

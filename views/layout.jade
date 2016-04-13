@@ -4,12 +4,32 @@ html(lang='en', ng-app="winApp")
 		meta(charset="utf-8")
 		title Win Free ng1
 		link(rel="stylesheet" type="text/css" href="main.css")
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', type='text/css')
 
 	body
-
-		h1 WinFree.ie
+		
+		a(href="/")
+			h1 WinFree.ie
 
 		block content
+
+
+		script.
+			window.fbAsyncInit = function() {
+			FB.init({
+			appId      : '680909698714083',
+			xfbml      : true,
+			version    : 'v2.5'
+			});
+			};
+			(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
 		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-resource.min.js")

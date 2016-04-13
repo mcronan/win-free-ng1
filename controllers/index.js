@@ -1,3 +1,6 @@
+var User = require('../models/model');
+
+
 var indexController = {
 
 	index: function(req, res) {
@@ -11,6 +14,18 @@ var indexController = {
 	about: function(req, res) {
 		res.render('about');
 		console.log("this is an about test")
+	},
+
+	form: function(req, res) {
+		res.render('form');
+	},
+
+	video: function(req, res) {
+		res.render('video')
+	},
+
+	reference: function(req, res) {
+		res.render('reference')
 	},
 	
 	landing: function(req, res) {
