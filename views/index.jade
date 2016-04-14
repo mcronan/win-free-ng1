@@ -11,4 +11,15 @@ block content
 		button.btn.btn-default(type="button")
 			a(href="form") Sign-up in 15 seconds!
 
-		//- div(ng-view)
+		container
+			.jumbotron.text-center
+				h1
+					span.fa.fa-lock
+					|  Node Authentication
+					p Login or Register with:
+					a.btn.btn-default(href='/login')
+						span.fa.fa-user
+							|  Local Login
+					a.btn.btn-default(href='/signup')
+						span.fa.fa-user
+							|  Local Signup

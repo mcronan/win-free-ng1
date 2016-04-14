@@ -1,32 +1,32 @@
-extends layout
+//- extends layout
 
-block content
-	div(ng-controller="formController")
-		.row
-			.col-sm-12.center
-				h1 Form!
-				{{message}}
-		.row
-			.col-sm-offset-4.col-sm-4
-				form(ng-submit="addUser()").form-vertical
-					.form-group
-						label.col-sm-2.control-label(for='') Name
-					.col-sm-10
-						input.form-control(type='text', placeholder='Name' ng-model="newestUser.name")
-		.row
-			.col-sm-offset-4.col-sm-4
-					.form-group
-						label.col-sm-2.control-label(for='') Email
-					.col-sm-10
-						input.form-control(type='text', placeholder='Email' ng-model="newestUser.email")
-		.row
-			.col-sm-offset-4.col-sm-4
-					.form-group
-						label.col-sm-2.control-label(for='') Password
-					.col-sm-10
-						input.form-control(type='text', placeholder='Password' ng-model="newestUser.password")
-						a(href="video")
-							button.btn.btn-primary.btn-lg.last-button(type="submit" ng-click="addUser()") Submit
+//- block content
+//- 	div(ng-controller="formController")
+//- 		.row
+//- 			.col-sm-12.center
+//- 				h1 Form!
+//- 				{{message}}
+//- 		.row
+//- 			.col-sm-offset-4.col-sm-4
+//- 				form(ng-submit="addUser()").form-vertical
+//- 					.form-group
+//- 						label.col-sm-2.control-label(for='') Name
+//- 					.col-sm-10
+//- 						input.form-control(type='text', placeholder='Name' ng-model="newestUser.name")
+//- 		.row
+//- 			.col-sm-offset-4.col-sm-4
+//- 					.form-group
+//- 						label.col-sm-2.control-label(for='') Email
+//- 					.col-sm-10
+//- 						input.form-control(type='text', placeholder='Email' ng-model="newestUser.email")
+//- 		.row
+//- 			.col-sm-offset-4.col-sm-4
+//- 					.form-group
+//- 						label.col-sm-2.control-label(for='') Password
+//- 					.col-sm-10
+//- 						input.form-control(type='text', placeholder='Password' ng-model="newestUser.password")
+//- 						a(href="video")
+//- 							button.btn.btn-primary.btn-lg.last-button(type="submit" ng-click="addUser()") Submit
 
 
 

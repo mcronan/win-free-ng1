@@ -13,15 +13,15 @@ winApp.config(function($routeProvider) {
 });
 
 
-winApp.factory('winFactory', function($resource) {
+// winApp.factory('winFactory', function($resource) {
 
-	var model = $resource('/api/users');
+// 	var model = $resource('/api/users');
 
-	return {
-		model : model,
-		users : model.query()
-	}
-})
+// 	return {
+// 		model : model,
+// 		users : model.query()
+// 	}
+// })
 
 
 
@@ -39,18 +39,18 @@ winApp.controller('formController', function($scope,winFactory) {
 
 	$scope.message = "Form Controller"
 
-	$scope.addUser = function() {
-		console.log("addUser funciton")
-		var userSave = new winFactory.model(this.newestUser)
-			userSave.$save(function(returnData) {
-				console.log(returnData)
-				winFactory.users.push(returnData)
-			})
-	}
+	// $scope.addUser = function() {
+	// 	console.log("addUser funciton")
+	// 	var userSave = new winFactory.model(this.newestUser)
+	// 		userSave.$save(function(returnData) {
+	// 			console.log(returnData)
+	// 			winFactory.users.push(returnData)
+	// 		})
+	// }
 });
 
 winApp.controller('videoController', function($scope, $timeout, $location) {
-	$scope.message = "Video Controller"
+	$scope.message = "Video Controller";
 
 	$scope.timeInS = 3000;
 	// countdown timer
@@ -65,6 +65,23 @@ winApp.controller('videoController', function($scope, $timeout, $location) {
 	}
 
 	$timeout(countDown, 100)
+});
+
+winApp.controller('referenceController', function($scope) {
+	// $scope.random = Math.floor((Math.random() * 1000000) + 1)
+
+	 makeId = function()  {
+		var text = "";
+		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+		for( var i=0; i < 8; i++ )
+		    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+		return text;
+}
+
+$scope.random = makeId()
 
 
 });
+
