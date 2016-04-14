@@ -17,7 +17,7 @@ module.exports = function(app, passport) {
 	        failureFlash : true // allow flash messages
 	    }));
 
-	      // =====================================
+	    // =====================================
 	    // Profile ==============================
 	    // =====================================
 	       app.get('/profile', function(req, res) {
