@@ -1,3 +1,7 @@
+body {
+	background-color: yellow !important;
+}
+
 .center {
 	text-align: center
 }
@@ -6,16 +10,17 @@
 	color: blue;
 }
 
-.scrollit {
-	overflow-y: scroll;
-	height: 100%;
-	background: grey;
-}
+/*** Fixed Column ***/
 
 .affix {
 	right: 0;
 }
 
-/*.how {
-	width: 15px;
-}*/
+/* Features */
+.features {
+	font-size: 20px;
+}
+
+.well {
+	background-color: #f5efe6 !important;
+}
