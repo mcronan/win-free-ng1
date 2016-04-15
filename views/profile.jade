@@ -5,21 +5,38 @@ block content
 	.container
 		.page-header.text-center
 			h1
-				span.fa.fa-anchor
 				|  Profile Page
 				a.btn.btn-default.btn-sm(href='/logout') Logout
-			.row
-				.col-sm-6
-					.well
-						h3
-						span.fa.fa-user
-						|  Local
-						p
-							strong id
-							| : {{user._id}}
-							br
-							strong id
-							| : user.local.email
-							br
-							strong id
-							| : user.local.password
+				col-sm-6
+		.col-sm-6
+			.well
+				h3.text-primary
+					a.btn.btn-default(href='/unlink/local') Unlink
+					a.btn.btn-default(href='/connect/local') Connect Local
+
+		.col-sm-6
+			.well
+				h3.text-primary
+					span.fa.fa-facebook
+					|  Facebook
+					a.btn.btn-primary(href='/unlink/facebook') Unlink
+					a.btn.btn-primary(href='/connect/facebook') Connect Facebook
+		.row
+			.col-sm-6
+				.well
+					a.btn.btn-primary(href='/video') Watch Today's Videos!
+
+			.col-sm-6
+				.well
+					h3
+					span.fa.fa-user
+					|  Local
+					p
+						strong id
+						| : {{user._id}}
+						br
+						strong id
+						| : user.local.email
+						br
+						strong id
+						| : user.local.password

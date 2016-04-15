@@ -4,7 +4,13 @@ block content
 
 	div(ng-controller="referenceController")
 
-		h1 Your Reference number is: #
-			strong{{random}}
+		h1 Your Reference number is: 
+			span.ref-color #
+			span.ref-color {{random}}
+
+	.row
+		.col-sm-6
+			.well
+				a.btn.btn-primary(href='/profile') Back to profile!
 
 	
