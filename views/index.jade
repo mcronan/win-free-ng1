@@ -4,19 +4,29 @@ block content
 
 	div(ng-controller="landingController")
 
-		//- {{message}}
 
-		container
-			.jumbotron.text-center
-				h1
-					|  Signup and start winning!
-					p Login or Register with:
-					a.btn.btn-default(href='/signup', type="button")
-						span.fa.fa-user
-							|  Signup in 15 Seconds!
-					a.btn.btn-default(href='/login')
-						span.fa.fa-user
-							|  Login
-					a.btn.btn-primary(href='/auth/facebook')
-						span.fa.fa-facebook
-						|  Facebook
+	.row
+		.col-sm-offset-1.col-sm-4
+			p 
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+		.col-sm-4.affix
+			.text-center
+			h2 Signup in 15 seconds!
+			br
+			a.btn.btn-default(href='/signup', type="button")
+				span.fa.fa-user
+				|  Signup in 15 Seconds!
+			br
+			a.btn.btn-primary(href='/auth/facebook')
+				span.fa.fa-facebook
+				|  Facebook
+
+	.row
+		.col-sm-offset-1.col-sm-3
+			
+				a.btn.btn-default(href='/login')
+					span.fa.fa-user
+						|  Login
+				
+	
