@@ -2,31 +2,32 @@ extends layout
 
 block content
 
-	.container
-		.col-sm-6.col-sm-offset-3
-			h1
-				span.fa.fa-sign-in
-				|  Login
+		.container
+					//- show messages that come back with authentication
+			if message.length
+					.alert.alert-danger= message
+			.row
+				.col-sm-6.col-sm-offset-3
+					//- this is the login form
+				form(action='/login', method='post')
+					.form-group.deform.center
+						h1 
+							.fa.fa-sign-in
+							|  Login
+						label Email
+							input.form-control(type='text', name='email', size="30")
+						.form-group
+						label Password
+							input.form-control(type='password', name='password', size="30")
+							
+							br
 
-				//- show messages that come back with authentication
-		if message.length
-			.alert.alert-danger= message
-
-			//- this is the login form
-		form(action='/login', method='post')
-			.form-group
-				label Email
-				input.form-control(type='text', name='email')
-			.form-group
-				label Password
-				input.form-control(type='password', name='password')
-			
-			button.btn.btn-warning.btn-lg(type='submit') Login
-		hr
-		p
-			| Need an account? 
-			a(href='/signup') Signup
-		p
-			| Or go 
-			a(href='/') home
-			| .
+							button.btn.btn-warning.btn-lg(type='submit') Login
+							hr
+						p
+							| Need an account? 
+							a(href='/signup') Signup
+						p
+							| Or go 
+							a(href='/') home
+							| .

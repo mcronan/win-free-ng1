@@ -18,7 +18,6 @@ body {
 }
 
 
-
 a {
 	text-decoration: none !important;
 	color: inherit !important;
@@ -72,6 +71,27 @@ a {
 /** Reference Page **/
 .ref-color {
 	color: blue;
+}
+
+
+/** Login  **/
+
+.deform {
+	width:400px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fdfdfc;
+	border: 1px solid #e3e3e2;
+	border-radius: 6px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 60px;
+}
+
+.vertical {
+	display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
 
 /** Footer  **/

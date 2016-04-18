@@ -41,11 +41,14 @@ block content
 				h2 Is This Real?
 				p.para Yes! We're real people in a real office doing real things! We're based in Galway City. See here for information on the founding team.
 
-				h2 How does WinFree Make Money?
+				h2 How Does WinFree Make Money?
 				p.para We make money by charging the advertisers to display their videos and messages, and then we hand winnings down to you, our beloved users. We keep some for ourself, of course.
 
 				h2 Do I have to live in Ireland?
 				p.para You must be resident in the Republic of Ireland to enter and receive your prize money. 
+
+				h2 How Many Times Can I Enter?
+				p.para You can enter once per day! Do not attemp to enter more than once per day, however, or you will be permanently excluded. 
 
 			.spacer-70
 			.border
@@ -72,13 +75,12 @@ block content
 			.well
 				h1
 					.fa.fa-sign-in 
-					|  Signup in seconds!
+					|  Signup in Seconds!
 				.container
 					.col-sm-6.col-sm-offset-3
-
 							//- show messages that come back with authentication
-					if message.length
-						.alert.alert-danger= message
+						if message.length
+							.alert.alert-danger= message
 
 						//- this is the signup form
 					form(action='/signup', method='post')
