@@ -1,26 +1,89 @@
 body {
 	background-color: yellow !important;
+	font-family: "Gotham Rounded A", "Gotham Rounded B", Helvetica, Arial, sans-serif !important;
 }
 
+/** NAV **/
+.logo {
+	font-size: 40px;
+}
+
+.navi {
+	font-size: 24px;
+	text-decoration: underline;
+}
+
+.navi.extra {
+	padding-top: 10px;
+}
+
+
+
+a {
+	text-decoration: none !important;
+	color: inherit !important;
+}
+
+/** Centering & Spacing **/
 .center {
 	text-align: center
 }
 
-.ref-color {
-	color: blue;
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spacer-30 {
+	padding-top: 30px;
+}
+
+.spacer-70 {
+	padding-top: 70px;
+}
+
+/** Features Section **/
+.center-block p {
+	font-size: 16px;
+}
+
+.title {
+	font-size: 40px;
+}
+
+/** Is this real **/
+
+.para {
+	font-size: 16px;
 }
 
 /*** Fixed Column ***/
-
 .affix {
 	right: 0;
 }
 
-/* Features */
-.features {
-	font-size: 20px;
+.well {
+	background-color: #fdfdfc !important;
+	color: black;
+	font-family: "Gotham Rounded A", "Gotham Rounded B", Helvetica, Arial, sans-serif !important
 }
 
-.well {
-	background-color: #f5efe6 !important;
+/** Reference Page **/
+.ref-color {
+	color: blue;
+}
+
+/** Footer  **/
+.border {
+	border-top: 1px solid grey;
+    display: block;
+    width: 100%;
+}
+
+.footer {
+	padding-top: 6%;
+	padding-bottom: 10%;
+	background-color: yellow;
+
 }

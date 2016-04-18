@@ -4,7 +4,7 @@ var User = require('../models/model');
 var indexController = {
 
 	index: function(req, res) {
-		res.render('index');
+		res.render('index', { message: req.flash('signupMessage') });
 		console.log("this is an index test")
 	},
 	
