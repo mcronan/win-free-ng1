@@ -136,6 +136,10 @@ ul {
     float: none;
 }
 
+.signup-color {
+	color: blue;
+}
+
 /** Footer  **/
 .border {
 	border-top: 1px solid grey;
