@@ -13,17 +13,16 @@ html(lang='en', ng-app="winApp")
 				.col-sm-1
 						a(href="/")
 							p.logo WinFree
-				.col-sm-offset-6.col-sm-2
-						a(href="#") 
-							p.navi.extra How it Works
-				.col-sm-1
-						a(href="#") 
-							p.navi.extra FAQ
-				.col-sm-1
-						p.navi
-						a.btn.btn-default(href='/login')
-							span.fa.fa-user
-								|  Login
+				.col-sm-offset-7.col-sm-4
+					ul.padpad
+						li.navi.extra-pad 
+							a(href="#") How it works
+						li.navi.extra-pad
+							a(href="#") FAQ
+						li.navi.but
+							a.btn.btn-default(href='/login')
+								span.fa.fa-user
+									|  Login
 
 		block content
 

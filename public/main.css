@@ -9,18 +9,50 @@ body {
 }
 
 .navi {
-	font-size: 24px;
+	font-size: 18px;
+}
+
+.navi.extra-pad  {
 	text-decoration: underline;
 }
 
-.navi.extra {
-	padding-top: 10px;
+.padpad {
+	padding-top: 12px;
 }
 
+li.navi {
+	margin-right: 10px;
+	margin-left: 40px;
+}
 
+.navi.but {
+	margin-left: 50px;
+}
 a {
 	text-decoration: none !important;
 	color: inherit !important;
+}
+
+li {
+	display: inline;
+}
+ul {
+	text-decoration: none;
+	list-style-type: none;
+}
+
+.btn.btn-default:hover {
+	background-color: #3284d6;
+	border-bottom: 3px solid #005bb7;
+}
+
+.btn.btn-default {
+	background-color: #06c;
+	border-bottom: 3px solid #005bb7;
+}
+
+.fa.fa-user {
+	color: white;
 }
 
 /** Centering & Spacing **/
@@ -68,6 +100,17 @@ a {
 	font-family: "Gotham Rounded A", "Gotham Rounded B", Helvetica, Arial, sans-serif !important
 }
 
+/* Signup */
+.btn.btn-primary{
+	font-size: 20px;
+	color: white !important;
+	
+}
+
+.fa.fa-facebook {
+	color: white;
+}
+
 /** Reference Page **/
 .ref-color {
 	color: blue;
@@ -75,7 +118,6 @@ a {
 
 
 /** Login  **/
-
 .deform {
 	width:400px;
 	margin-left: auto;
