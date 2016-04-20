@@ -1,42 +1,160 @@
-extends layout
+doctype html
+html(lang='en', ng-app="winApp")
+div(ng-controller="profileController")
+	head
+		meta(charset="utf-8")
+		title Win Free ng1
+		link(rel="stylesheet" type="text/css" href="main.css")
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', type='text/css')
+		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
 
-block content
+
+	body
+		.row
+			#navcontainer
+				.col-sm-1
+						a(href="/")
+							img(src="logo-temp.png")
+							//- p.logo WinFree
+				.col-sm-offset-7.col-sm-4
+					ul.padpad
+						li.navi.extra-pad 
+							a(href="#") How it works
+						li.navi.extra-pad
+							a(href="#") FAQ
+						li.navi.but
+							a.btn.btn-default.logout(href='/logout')
+								span.fa.fa-user.tolog
+									|  Logout
+
+	block content
 
 	.container
 		.page-header.text-center
 			h1
 				|  Profile Page
-				a.btn.btn-default.btn-sm(href='/logout') Logout
-				col-sm-6
+				{{message}}
+				
 		.col-sm-6
 			.well
 				h3.text-primary
-					a.btn.btn-default(href='/unlink/local') Unlink
-					a.btn.btn-default(href='/connect/local') Connect Local
+					| Local
+				a.btn.btn-primary(href='/unlink/local') Unlink
+				a.btn.btn-primary(href='/connect/local') Connect Local
 
 		.col-sm-6
 			.well
 				h3.text-primary
 					span.fa.fa-facebook
 					|  Facebook
-					a.btn.btn-primary(href='/unlink/facebook') Unlink
-					a.btn.btn-primary(href='/connect/facebook') Connect Facebook
+				a.btn.btn-primary(href='/unlink/facebook') Unlink
+				a.btn.btn-primary(href='/connect/facebook') Connect Facebook
 		.row
 			.col-sm-6
 				.well
 					a.btn.btn-primary(href='/video') Watch Today's Videos!
-
+			.col-sm-6
+				.well
+					h3 User Info
+					p
+					strong id
+					p {{user._id}}
+					br
+					strong id
+					//- user=User.local.email
+					br
+					strong id
+					| : user.local.password
+				
+			
+		.row			
 			.col-sm-6
 				.well
 					h3
-					span.fa.fa-user
-					|  Local
+						span.fa.fa-user
+						|  Local
+					//- container(ng-show='user.local.email')
 					p
-						strong id
-						| : {{user._id}}
+						strong id {{user}}
+
+						| : {{email}}
 						br
-						strong id
-						| : user.local.email
+						strong email
+						| : {{ user.local.email }}
 						br
-						strong id
-						| : user.local.password
+						strong password
+						| : {{ user.local.password }}
+					a.btn.btn-default(redir='', href='/unlink/local') Unlink
+					container(ng-hide='user.local.email')
+						a.btn.btn-default(href='/connect/local') Connect Local
+
+
+
+		script.
+			window.fbAsyncInit = function() {
+			FB.init({
+			appId      : '680909698714083',
+			xfbml      : true,
+			version    : 'v2.5'
+			});
+			};
+			(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-resource.min.js")
+		script(src="main.js")
+
+
+
+
+
+
+//- extends layout
+
+//- block content
+
+//- 	.container
+//- 		.page-header.text-center
+//- 			h1
+//- 				|  Profile Page
+//- 				a.btn.btn-default.btn-sm(href='/logout') Logout
+//- 				col-sm-6
+//- 		.col-sm-6
+//- 			.well
+//- 				h3.text-primary
+//- 					a.btn.btn-default(href='/unlink/local') Unlink
+//- 					a.btn.btn-default(href='/connect/local') Connect Local
+
+//- 		.col-sm-6
+//- 			.well
+//- 				h3.text-primary
+//- 					span.fa.fa-facebook
+//- 					|  Facebook
+//- 					a.btn.btn-primary(href='/unlink/facebook') Unlink
+//- 					a.btn.btn-primary(href='/connect/facebook') Connect Facebook
+//- 		.row
+//- 			.col-sm-6
+//- 				.well
+//- 					a.btn.btn-primary(href='/video') Watch Today's Videos!
+
+//- 			.col-sm-6
+//- 				.well
+//- 					h3
+//- 					span.fa.fa-user
+//- 					|  Local
+//- 					p
+//- 						strong id
+//- 						| : {{user._id}}
+//- 						br
+//- 						strong id
+//- 						| : user.local.email
+//- 						br
+//- 						strong id
+//- 						| : user.local.password

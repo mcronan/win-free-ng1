@@ -13,21 +13,50 @@ winApp.config(function($routeProvider) {
 });
 
 
-// winApp.factory('winFactory', function($resource) {
+winApp.factory('winFactory', function($resource) {
 
-// 	var model = $resource('/api/users');
+	var model = $resource('/api/users');
 
-// 	return {
-// 		model : model,
-// 		users : model.query()
-// 	}
-// })
-
+	return {
+		model : model,
+		users : model.query()
+	}
+})
 
 
 winApp.controller('landingController', function($scope) {
 	$scope.message = "The Landing Controller"
+	console.log("landingController")
 });
+
+winApp.controller('signupForm', ['$http', '$scope','$location', function($http, $scope, $location) {
+            $scope.message = "howya";
+
+            $scope.signup = function() {
+
+            	$location.path('profile')
+                // message
+                console.log("Boom");
+                $http
+                    .post('/signup', {
+                        email: this.email,
+                        password: this.password
+                    })
+                    .success(function(data) {
+                        console.log(data);
+                    });
+                   
+            }
+        }])
+
+winApp.controller('profileController', ['$http', '$scope', '$routeParams', function($http, $scope, $routeParams) {
+            $scope.message = "profile controller"
+            //Custom Profile functionality
+            $http.get('/api/userData')
+                .success(function(data) {
+                    $scope.user = data; //Expose the user data to your angular scope
+                });
+        }])
 
 winApp.controller('aboutController', function($scope) {
 	$scope.message = "About Controller"
@@ -36,7 +65,6 @@ winApp.controller('aboutController', function($scope) {
 winApp.controller('formController', function($scope,winFactory) {
 
 	$scope.users = winFactory.users;
-
 	$scope.message = "Form Controller"
 
 	// $scope.addUser = function() {
@@ -67,6 +95,19 @@ winApp.controller('videoController', function($scope, $timeout, $location) {
 	$timeout(countDown, 100)
 });
 
+// winApp.controller('profileController', function($scope, winFactory) {
+// 	// $scope.users = winFactory.users;
+
+// 	$scope.message = "Profile Controller";
+// 	// $scope.email = user.local.email;
+// });
+
+
+
+
+
+
+
 winApp.controller('referenceController', function($scope) {
 	// $scope.random = Math.floor((Math.random() * 1000000) + 1)
 
@@ -82,6 +123,6 @@ winApp.controller('referenceController', function($scope) {
 
 $scope.random = makeId()
 
-
 });
+
 

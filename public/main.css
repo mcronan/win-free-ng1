@@ -36,6 +36,7 @@ a {
 li {
 	display: inline;
 }
+
 ul {
 	text-decoration: none;
 	list-style-type: none;
@@ -51,8 +52,17 @@ ul {
 	border-bottom: 3px solid #005bb7;
 }
 
+.btn.btn-default.logout {
+	background-color: white;
+	border-bottom: 3px solid  #06c;;
+}
+
 .fa.fa-user {
 	color: white;
+}
+
+.fa.fa-user.tolog {
+	color: blue;
 }
 
 /** Centering & Spacing **/
@@ -101,10 +111,9 @@ ul {
 }
 
 /* Signup */
-.btn.btn-primary{
+.btn.btn-primary {
 	font-size: 20px;
 	color: white !important;
-	
 }
 
 .fa.fa-facebook {

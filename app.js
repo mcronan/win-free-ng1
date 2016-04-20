@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
-var indexController = require('./controllers/index.js');
-// var apiController = require('./controllers/api.js');
+var indexController = require('./public/controllers/index.js');
+var apiController = require('./public/controllers/api.js');
 
 var passport = require('passport');
 // var FacebookStrategy = require('passport-facebook').Strategy
@@ -47,6 +47,8 @@ app.get('/', indexController.index);
 app.get('/form', indexController.form);
 app.get('/video', indexController.video);
 app.get('/reference', indexController.reference);
+app.get('/login', indexController.login);
+
 
 
 // api controller 

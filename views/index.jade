@@ -1,19 +1,17 @@
 extends layout
 
 block content
-
-	div(ng-controller="landingController")
-
-
+	div
 	.row
 		.col-sm-offset-1.col-sm-6
 			.well.text-center
-				h1.title Win €1,000 Daily!
+				h1.title {{message}} 
+				{{message}}
 
 				h2.subtitle Just watch the ads and win - easy peasy!
-
-					br
-					br
+				
+				br
+				br
 				.row
 					.col-sm-6.center-block
 						img(src="tv.png")
@@ -21,7 +19,8 @@ block content
 						p Watch 2 x 30 second ads to be entered in the raffle. We all hate ads, so that's we made fun, week-long series for you to follow. 
 
 					.col-sm-6.center-block
-						img(src="raffle.png")
+						img(src="raffle.png") 
+						{{message}}
 						h3 Enter the Raffle
 						p We'll give you a reference number after watching. We pick 1 winner every single day! We just love giving out cash. Enter everyday if you wish.
 					.col-sm-6
@@ -56,8 +55,9 @@ block content
 			.border
 
 			.row
-				.col-sm-12
+				.col-sm-11
 					.footer
+						.row
 						.col-sm-5.center
 						.col-sm-1
 							img(src="facebook.png" height="30px" width="30px")
@@ -69,7 +69,6 @@ block content
 
 
 
-
 		//-  Fixed Column
 		.col-sm-4.affix
 			//- .text-center
@@ -77,24 +76,31 @@ block content
 			.well
 				h1
 					.fa.fa-sign-in 
-					|  Signup in Seconds!
+					|  Signup in Seconds! 
 				.container
-					.col-sm-6.col-sm-offset-3
-							//- show messages that come back with authentication
-						if message.length
-							.alert.alert-danger= message
+					.col-sm-6
+					form(ng-submit='signup()' ng-controller="signupForm")
+						.form-group
+							label Email
+							input.form-control(type='text', ng-model='email')
+							p {{message}}
+						.form-group
+							label Password
+							input.form-control(type='password', ng-model='password')
+						a.button.btn.btn-warning.btn-lg(type='submit', href="/profile") Login
+
 
 						//- this is the signup form
-					form(action='/signup', method='post')
-						.form-group
-						label Email
-							input.form-control(type='text', name='email' size="30")
-						.form-group
-						label Password
-							input.form-control(type='password', name='password' size="30")
-							br
-							button.btn.btn-warning.btn-lg(type='submit') Signup
-					br
+					//- form(action='/signup', method='post')
+					//- 	.form-group
+					//- 	label Email
+					//- 		input.form-control(type='text', name='email' size="30")
+					//- 	.form-group
+					//- 	label Password
+					//- 		input.form-control(type='password', name='password' size="30")
+					//- 		br
+					//- 		button.btn.btn-warning.btn-lg(type='submit') Signup
+					//- br
 					p
 						| Have a facebook account? 
 						

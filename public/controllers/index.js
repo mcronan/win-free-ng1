@@ -1,4 +1,4 @@
-var User = require('../models/model');
+var User = require('../../models/model.js');
 
 
 var indexController = {
@@ -6,6 +6,7 @@ var indexController = {
 	index: function(req, res) {
 		res.render('index', { message: req.flash('signupMessage') });
 		console.log("this is an index test")
+		// res.sendfile('./views/index.jade');
 	},
 	
 	templates: function(req, res) {
@@ -26,6 +27,9 @@ var indexController = {
 
 	reference: function(req, res) {
 		res.render('reference')
+	},
+	login: function(req, res) {
+		res.render('login')
 	},
 	
 	landing: function(req, res) {
