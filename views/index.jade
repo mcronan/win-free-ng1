@@ -1,14 +1,12 @@
 extends layout
 
 block content
-	div
 	.row
 		.col-sm-offset-1.col-sm-6
-			.well.text-center
-				h1.title {{message}} 
-				{{message}}
+			.well.text-center(ng-controller="landingController")
+				h1.title Just watch the ads and win - easy peasy! 
 
-				h2.subtitle Just watch the ads and win - easy peasy!
+				h2.subtitle Win €1,000 Everyday
 				
 				br
 				br
@@ -20,7 +18,6 @@ block content
 
 					.col-sm-6.center-block
 						img(src="raffle.png") 
-						{{message}}
 						h3 Enter the Raffle
 						p We'll give you a reference number after watching. We pick 1 winner every single day! We just love giving out cash. Enter everyday if you wish.
 					.col-sm-6
@@ -81,26 +78,14 @@ block content
 					.col-sm-6
 					form(ng-submit='signup()' ng-controller="signupForm")
 						.form-group
-							label Email
+						label Email
 							input.form-control(type='text', ng-model='email')
-							p {{message}}
+							p Message: {{message}}
 						.form-group
-							label Password
+						label Password
 							input.form-control(type='password', ng-model='password')
-						a.button.btn.btn-warning.btn-lg(type='submit', href="/profile") Login
+							a.button.btn.btn-warning.btn-lg(type='submit', href="/profile") Signup
 
-
-						//- this is the signup form
-					//- form(action='/signup', method='post')
-					//- 	.form-group
-					//- 	label Email
-					//- 		input.form-control(type='text', name='email' size="30")
-					//- 	.form-group
-					//- 	label Password
-					//- 		input.form-control(type='password', name='password' size="30")
-					//- 		br
-					//- 		button.btn.btn-warning.btn-lg(type='submit') Signup
-					//- br
 					p
 						| Have a facebook account? 
 						

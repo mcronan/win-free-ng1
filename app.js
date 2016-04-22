@@ -6,7 +6,6 @@ var apiController = require('./public/controllers/api.js');
 var passport = require('passport');
 // var FacebookStrategy = require('passport-facebook').Strategy
 
-
 // passport
 var morgan       = require('morgan');
 var passport = require('passport');

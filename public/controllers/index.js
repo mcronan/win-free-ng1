@@ -12,6 +12,7 @@ var indexController = {
 	templates: function(req, res) {
 		res.render('templates/' + req.params.templateName)
 	},
+	
 	about: function(req, res) {
 		res.render('about');
 		console.log("this is an about test")
@@ -28,6 +29,7 @@ var indexController = {
 	reference: function(req, res) {
 		res.render('reference')
 	},
+
 	login: function(req, res) {
 		res.render('login')
 	},

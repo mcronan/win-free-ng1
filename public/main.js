@@ -24,15 +24,38 @@ winApp.factory('winFactory', function($resource) {
 })
 
 
-winApp.controller('landingController', function($scope) {
-	$scope.message = "The Landing Controller"
+winApp.controller('landingController', ['$scope', function($scope) {
+	$scope.theMessage = "The Landing Controller";
 	console.log("landingController")
-});
+}]);
 
+//  Signup Controller
 winApp.controller('signupForm', ['$http', '$scope','$location', function($http, $scope, $location) {
             $scope.message = "howya";
 
             $scope.signup = function() {
+
+            	$location.path('profile')
+                // message
+                console.log("Boom");
+                $http
+                    .post('/signup', {
+                        email: this.email,
+                        password: this.password
+                    })
+                    .success(function(data) {
+                        console.log(data);
+                    });
+                   
+            }
+        }])
+
+
+//  Signup Controller
+winApp.controller('loginForm', ['$http', '$scope','$location', function($http, $scope, $location) {
+            $scope.message = "howya";
+
+            $scope.login = function() {
 
             	$location.path('profile')
                 // message

@@ -9,14 +9,14 @@ block content
 		.row
 			.col-sm-6
 					//- this is the login form
-				form(ng-submit='login()', ng-controller='LoginForm')
+				form(ng-submit='login()', ng-controller='loginForm')
 					.form-group
 						label Email
 						input.form-control(type='text', ng-model='email')
 					.form-group
 						label Password
 						input.form-control(type='password', ng-model='password')
-					button.btn.btn-warning.btn-lg(type='submit') Login
+					a(href="profile").button.btn.btn-warning.btn-lg(type='submit') Login
 
 	
 
