@@ -76,15 +76,17 @@ block content
 					|  Signup in Seconds! 
 				.container
 					.col-sm-6
+						//- this ng-submit button does
+						//- not work. using 'ng-click'
 					form(ng-submit='signup()' ng-controller="signupForm")
 						.form-group
 						label Email
 							input.form-control(type='text', ng-model='email')
-							p Message: {{message}}
+						p Message: {{message}}
 						.form-group
 						label Password
 							input.form-control(type='password', ng-model='password')
-							a.button.btn.btn-warning.btn-lg(type='submit', href="/profile") Signup
+						.button.btn.btn-warning.btn-lg(type='submit' ng-click="signup()") Signup
 
 					p
 						| Have a facebook account? 

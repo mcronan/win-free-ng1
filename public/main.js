@@ -1,22 +1,17 @@
 var winApp = angular.module('winApp', ['ngResource', 'ngRoute']);
 
-winApp.config(function($routeProvider) {
-	$routeProvider
-	// .when('/', {
-	// 	templateUrl : '/landing',
-	// 	controller : 'landingController'
-	// })
-	.when('/about', {
-		templateUrl : '/templates/sneaky',
-		// controller : 'aboutController'
-	})
-});
+winApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+	$routeProvider    
+                .when('/profile', {
+                    templateUrl: 'profile',
+                    controller: 'profileController',
+                });
+        // $locationProvider.html5Mode(true);
+}]);
 
 
 winApp.factory('winFactory', function($resource) {
-
 	var model = $resource('/api/users');
-
 	return {
 		model : model,
 		users : model.query()
@@ -29,15 +24,14 @@ winApp.controller('landingController', ['$scope', function($scope) {
 	console.log("landingController")
 }]);
 
+
 //  Signup Controller
-winApp.controller('signupForm', ['$http', '$scope','$location', function($http, $scope, $location) {
-            $scope.message = "howya";
+winApp.controller('signupForm', ['$http', '$scope', '$location', function($http, $scope,$location) {
+			console.log("signup boom");
+			$scope.message = "howya"
 
             $scope.signup = function() {
-
-            	$location.path('profile')
-                // message
-                console.log("Boom");
+                console.log("Signup Func boom");
                 $http
                     .post('/signup', {
                         email: this.email,
@@ -45,30 +39,28 @@ winApp.controller('signupForm', ['$http', '$scope','$location', function($http, 
                     })
                     .success(function(data) {
                         console.log(data);
+                        window.location="http://localhost:3500/profile"
                     });
-                   
             }
         }])
 
 
-//  Signup Controller
-winApp.controller('loginForm', ['$http', '$scope','$location', function($http, $scope, $location) {
+//  Login Controller
+winApp.controller('loginForm', ['$http', '$scope', '$location',function($http, $scope, $location) {
             $scope.message = "howya";
-
+			console.log("Login Boom");
             $scope.login = function() {
-
-            	$location.path('profile')
                 // message
-                console.log("Boom");
+                console.log("Login Func Boom");
                 $http
-                    .post('/signup', {
+                    .post('/login', {
                         email: this.email,
                         password: this.password
                     })
                     .success(function(data) {
                         console.log(data);
-                    });
-                   
+                    });   
+
             }
         }])
 
@@ -110,7 +102,7 @@ winApp.controller('videoController', function($scope, $timeout, $location) {
 		var timer = $timeout(countDown, 100)
 			if(theTime === 0) {
 				console.log("done")
-				// $location.path("/reference")
+				// $location.path("reference")
 				window.location="http://localhost:3500/reference"
 			}
 	}
@@ -124,11 +116,6 @@ winApp.controller('videoController', function($scope, $timeout, $location) {
 // 	$scope.message = "Profile Controller";
 // 	// $scope.email = user.local.email;
 // });
-
-
-
-
-
 
 
 winApp.controller('referenceController', function($scope) {

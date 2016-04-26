@@ -63,7 +63,6 @@ function(req, email, password, done) {
 
                     // create the user
                     var newUser            = new User.User();
-
                     newUser.local.email    = email;
                     newUser.local.password = newUser.generateHash(password);
 

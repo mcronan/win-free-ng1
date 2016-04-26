@@ -58,7 +58,7 @@
             $scope.signup = function() {
                 // message
                 $scope.message = "howya";
-                console.log("Boom");
+                console.log("sdfsdf");
                 $http
                     .post('/signup', {
                         email: this.email,
