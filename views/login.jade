@@ -1,48 +1,28 @@
 extends layout
 
 block content
-
-		//- .container
-		//- 			//- show messages that come back with authentication
-		//- 	if message.length
-		//- 			.alert.alert-danger= message
-		.row
-			.col-sm-6
-					//- this is the login form
-				form(ng-submit='login()', ng-controller='loginForm')
-					.form-group
-						label Email
-						input.form-control(type='text', ng-model='email')
-					.form-group
-						label Password
-						input.form-control(type='password', ng-model='password')
-					.button.btn.btn-warning.btn-lg(ng-click="login()" type='submit') Login
-
-	
-
-
-
-				//- form(action='/login', method='post')
-				//- 	.form-group.deform.center
-				//- 		h1 
-				//- 			.fa.fa-sign-in
-				//- 			|  Login
-				//- 		label Email
-				//- 			input.form-control(type='text', name='email', size="30")
-				//- 		.form-group
-				//- 		label Password
-				//- 			input.form-control(type='password', name='password', size="30")
-							
-				//- 			br
-
-				//- 			button.btn.btn-warning.btn-lg(type='submit') Login
-				//- 			hr
-				p
-					| Need an account? 
-					a(href='/signup') 
-						span.signup-color Signup
-				p
-					| Or go 
-					a(href='/') 
-						span.signup-color home
-					| .
+	br
+	br
+	br
+	br
+	.row
+		.col-sm-offset-4.col-sm-4
+			//- this is the login form
+			form(ng-submit='login()', ng-controller='loginForm')
+				.form-group
+					label Email
+					input.form-control(type='text', ng-model='email')
+				.form-group
+					label Password
+					input.form-control(type='password', ng-model='password')
+				.button.btn.btn-warning.btn-lg(ng-click="login()" type='submit') Login
+			br
+			p
+				| Need an account? 
+				a(href='/') 
+					span.signup-color Signup
+			p
+				| Or go 
+				a(href='/') 
+					span.signup-color home
+				| .

@@ -100,7 +100,7 @@ winApp.controller('formController', function($scope,winFactory) {
 winApp.controller('videoController', function($scope, $timeout, $location) {
 	$scope.message = "Video Controller";
 
-	$scope.timeInS = 3000;
+	$scope.timeInS = 5000;
 	// countdown timer
 	var countDown = function() {
 		var theTime = $scope.timeInS -= 100;

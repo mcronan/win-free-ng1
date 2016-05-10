@@ -149,6 +149,41 @@ ul {
 	color: blue;
 }
 
+/** Profile  **/
+.footer-profile {
+	padding-top: 3%;
+	padding-bottom: 5%;
+	background-color: yellow;
+}
+
+.video-button {
+	margin-top: 11px;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	padding-left: 15px;
+	padding-right: 5px;
+	background-color: #33cc33;
+	color: white !important;
+/*	font-weight: bold;
+*/	border-radius: 4px;
+	display: block;
+	width: 230px;
+	border: 2px solid #29a329;
+	font-size: 20px;
+}
+
+.profile-border {
+	border-top: 1px solid grey;
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.streak {
+	text-align: center;
+	font-size: 60px;
+}
+
 /** Footer  **/
 .border {
 	border-top: 1px solid grey;
@@ -160,5 +195,11 @@ ul {
 	padding-top: 6%;
 	padding-bottom: 10%;
 	background-color: yellow;
+}
 
+/** Reference  **/
+.go-back {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
 }

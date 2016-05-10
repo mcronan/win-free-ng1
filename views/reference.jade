@@ -3,14 +3,17 @@ extends layout
 block content
 
 	div(ng-controller="referenceController")
-
-		h1 Your Reference number is: 
+		br
+		br
+		br
+		h1.center Your Reference number is: 
 			span.ref-color #
 			span.ref-color {{random}}
-
-	.row
-		.col-sm-6
-			.well
-				a.btn.btn-primary(href='/profile') Back to profile!
+			br
+			br
+			br
+			br
+			
+			a.btn.btn-primary(href='/profile').go-back Back to profile!
 
 	

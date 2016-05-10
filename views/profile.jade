@@ -31,17 +31,20 @@ div(ng-controller="profileController")
 	block content
 
 	.container
-		.page-header.text-center
-			h1
-				| Profile Page
 		.row
-			.col-sm-6
-				.well
-					a.btn.btn-primary(href='/video') Watch Today's Videos!
-		
+			.col-sm-3
+				.text-center
+					h1 Profile Page
+			.col-sm-offset-5.col-sm-3
+				a.video-button(href='/video') Watch Today's Videos!
 		.row
-			.col-sm-offset-8.col-sm-4
+			.col-sm-12
+				.profile-border
+					
+		.row
+			.col-sm-4
 				.well
+					h2 Accounts
 					h3.text-primary
 						span.fa.fa-facebook
 						|  Facebook
@@ -50,9 +53,6 @@ div(ng-controller="profileController")
 						a.btn.btn-primary(href='/connect/facebook') Connect Facebook
 					container(ng-show='user.facebook.email')
 						a.btn.btn-primary(href='/')  Facebook is Connected
-		.row
-			.col-sm-offset-8.col-sm-4
-				.well
 					h3.text-primary
 						span.fa.fa-user
 						|  Local 
@@ -61,12 +61,19 @@ div(ng-controller="profileController")
 
 					container(ng-hide='user.local.email')
 						a.btn.btn-primary(href='/connect/local') Connect Local
-
-		
-		.row
-			.col-sm-offset-8.col-sm-4
+			.col-sm-4
 				.well
-					h3 User Info
+					h2 Day Streak
+					br
+					p.streak 7
+
+
+
+
+		.row
+			.col-sm-4
+				.well.info
+					h2 User Info
 					p
 					strong USER ID:
 					p {{user._id}}
@@ -75,19 +82,34 @@ div(ng-controller="profileController")
 					Strong LOCAL EMAIL: 
 					{{user.local.email}}
 					br
-					Strong LOCAL PASSWORD: 
-					{{user.local.password}}
-					br
+					//- Strong LOCAL PASSWORD: 
+					//- {{user.local.password}}
+					//- br
 					Strong FACEBOOK ID: 
 					{{user.facebook.id}}
 					br
 					Strong FACEBOOK EMAIL: 
 					{{user.facebook.email}}
 					br
-							
-		.row			
-			.col-sm-6
-				
+			.col-sm-4
+				.well
+					h2 Winnings
+					br
+					p.streak €0
+		.row
+			.col-sm-12
+				.border
+					.footer-profile
+						.row
+						.col-sm-5.center
+						.col-sm-1
+								img(src="facebook.png" height="30px" width="30px")
+							.col-sm-1
+								img(src="twitter.png" height="30px" width="30px")
+					.row
+						.col-sm-12.center
+							p WinFree.ie 2016
+
 
 		script.
 			window.fbAsyncInit = function() {
