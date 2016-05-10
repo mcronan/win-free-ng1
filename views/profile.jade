@@ -34,59 +34,60 @@ div(ng-controller="profileController")
 		.page-header.text-center
 			h1
 				| Profile Page
-				{{message}}
-				
-		.col-sm-6
-			.well
-				h3.text-primary
-					| Local
-				a.btn.btn-primary(href='/unlink/local') Unlink
-				a.btn.btn-primary(href='/connect/local') Connect Local
-
-		.col-sm-6
-			.well
-				h3.text-primary
-					span.fa.fa-facebook
-					|  Facebook
-				a.btn.btn-primary(href='/unlink/facebook') Unlink
-				a.btn.btn-primary(href='/connect/facebook') Connect Facebook
 		.row
 			.col-sm-6
 				.well
 					a.btn.btn-primary(href='/video') Watch Today's Videos!
-			.col-sm-6
+		
+		.row
+			.col-sm-offset-8.col-sm-4
+				.well
+					h3.text-primary
+						span.fa.fa-facebook
+						|  Facebook
+					//- a.btn.btn-primary(href='/unlink/facebook') Unlink
+					container(ng-hide='user.facebook.email')
+						a.btn.btn-primary(href='/connect/facebook') Connect Facebook
+					container(ng-show='user.facebook.email')
+						a.btn.btn-primary(href='/')  Facebook is Connected
+		.row
+			.col-sm-offset-8.col-sm-4
+				.well
+					h3.text-primary
+						span.fa.fa-user
+						|  Local 
+					container(ng-show='user.local.email')
+					a.btn.btn-primary(redir='', href='/unlink/local') Local is Connected
+
+					container(ng-hide='user.local.email')
+						a.btn.btn-primary(href='/connect/local') Connect Local
+
+		
+		.row
+			.col-sm-offset-8.col-sm-4
 				.well
 					h3 User Info
 					p
 					strong USER ID:
 					p {{user._id}}
-					strong USER OBJECT:
-					{{user}}
-					br
+					//- strong USER OBJECT:
+					//- {{user}}
 					Strong LOCAL EMAIL: 
-					{{email}}
+					{{user.local.email}}
 					br
 					Strong LOCAL PASSWORD: 
-					{{user.password}}
+					{{user.local.password}}
 					br
 					Strong FACEBOOK ID: 
 					{{user.facebook.id}}
 					br
 					Strong FACEBOOK EMAIL: 
-					{{email.facebook.id}}
+					{{user.facebook.email}}
 					br
 							
 		.row			
 			.col-sm-6
-				.well
-					h3
-						span.fa.fa-user
-						|  Local
-					//- container(ng-show='user.local.email')
-					a.btn.btn-default(redir='', href='/unlink/local') Unlink
-					container(ng-hide='user.local.email')
-						a.btn.btn-default(href='/connect/local') Connect Local
-
+				
 
 		script.
 			window.fbAsyncInit = function() {
