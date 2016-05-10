@@ -8,6 +8,7 @@ module.exports = function(app, passport) {
 		    if (!req.body.email || !req.body.password) {
 		        return res.json({ error: 'Email and Password required' });
 		    }
+		    console.log("backend login")
 		    passport.authenticate('local-login', function(err, user, info) {
 		        if (err) { 
 		            return res.json(err);
@@ -19,7 +20,8 @@ module.exports = function(app, passport) {
 		            if (err) {
 		                return res.json(err);
 		            }
-		            return res.json({ redirect: '/profile' });
+		            // return res.json({ redirect: '/profile' });
+		            return res.json("log-me-in")
 		        });
 		    })(req, res);
 		});
@@ -75,7 +77,7 @@ module.exports = function(app, passport) {
 		            if (err) {
 		                return res.json(err);
 		            }
-		            return res.json({ redirect: '/profile' });
+		            return res.json("sign-me-in");
 		        });
 		    })(req, res);
 		});

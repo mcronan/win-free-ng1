@@ -3,7 +3,7 @@ var winApp = angular.module('winApp', ['ngResource', 'ngRoute']);
 winApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 	$routeProvider    
                 .when('/profile', {
-                    templateUrl: 'profile',
+                    templateUrl: '/profile',
                     controller: 'profileController',
                 });
         // $locationProvider.html5Mode(true);
@@ -39,7 +39,9 @@ winApp.controller('signupForm', ['$http', '$scope', '$location', function($http,
                     })
                     .success(function(data) {
                         console.log(data);
-                        window.location="http://localhost:3500/profile"
+                        if (data == "sign-me-in") {
+                        		window.location="http://localhost:3500/profile"
+                   		 	}
                     });
             }
         }])
@@ -59,6 +61,9 @@ winApp.controller('loginForm', ['$http', '$scope', '$location',function($http, $
                     })
                     .success(function(data) {
                         console.log(data);
+                        	if (data == "log-me-in") {
+                        		window.location="http://localhost:3500/profile"
+                   		 	}
                     });   
 
             }
