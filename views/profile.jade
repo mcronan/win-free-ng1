@@ -44,7 +44,7 @@ div(ng-controller="profileController")
 		.row
 			.col-sm-4
 				.well
-					h2 Accounts
+					h2.center Accounts
 					h3.text-primary
 						span.fa.fa-facebook
 						|  Facebook
@@ -63,9 +63,13 @@ div(ng-controller="profileController")
 						a.btn.btn-primary(href='/connect/local') Connect Local
 			.col-sm-4
 				.well
-					h2 Day Streak
+					h2.center Videos Watched
+					br
 					br
 					p.streak 7
+					br
+					br
+					
 
 
 
@@ -73,7 +77,7 @@ div(ng-controller="profileController")
 		.row
 			.col-sm-4
 				.well.info
-					h2 User Info
+					h2.center User Info
 					p
 					strong USER ID:
 					p {{user._id}}
@@ -93,7 +97,7 @@ div(ng-controller="profileController")
 					br
 			.col-sm-4
 				.well
-					h2 Winnings
+					h2.center Winnings
 					br
 					p.streak €0
 		.row
