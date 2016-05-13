@@ -1,0 +1,156 @@
+doctype html
+html(lang='en', ng-app="winApp")
+div(ng-controller="profilePlayController")
+	head
+		meta(charset="utf-8")
+		title Win Free ng1
+		link(rel="stylesheet" type="text/css" href="main.css")
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', type='text/css')
+		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+		
+
+
+	body
+		.row
+			#navcontainer
+				.col-sm-1
+						a(href="/")
+							img(src="logo-temp.png")
+							//- p.logo WinFree
+				.col-sm-offset-7.col-sm-4
+					ul.padpad
+						li.navi.extra-pad 
+							a(href="#") How it works
+						li.navi.extra-pad
+							a(href="#") FAQ
+						li.navi.but
+							a.btn.btn-default.logout(href='/logout')
+								span.fa.fa-user.tolog
+									|  Logout
+
+	block content
+
+	.container
+		.row
+			.col-sm-3
+				.text-center
+					h1 Dashboard
+			.col-sm-offset-5.col-sm-3
+				//- a.video-button(href='/video') Watch Today's Videos!
+		.row
+			.col-sm-12
+				.profile-border.center
+					h3 Raffle Bar
+		.row
+			.col-sm-offset-2.col-sm-8
+				.bar-chart.primary(data-total='76', animated='')
+					span.bar-chart--inner(style='width:75%;') 
+						span.bar-chart--inner-2(style='width:66%;')
+							span.bar-chart--inner-3(style='width:50%;')
+			//- .col-sm-1 10 Days
+		
+		.row
+			.col-sm-4.side-border.center.block-heights
+				h3.underline Your Odds
+				br
+				img(src="hot-pepper.png")
+				br
+				br
+				h4 <strong>Heating Up </strong> 
+					br
+					| Keep watching videos to increase your streak and improve your odds of winning!
+			.col-sm-4.top-border.center.block-heights
+				h3.underline Today's Video
+				h2 {{timeInS | date:"h:mm:ss"}}
+				br
+				a.video-button.bottom(href='/video') Watch Today's Stories!
+			.col-sm-4.side-border.center.block-heights
+				h3.underline Yesterday's Winner
+				h2 €1,000
+				img.winner(src="fonzie.jpg" height="100" width="100")
+				br
+				h4 The Fonz, Ballina
+
+
+
+	
+
+
+		.row
+			.col-sm-12
+					.footer-profile
+						.row
+		
+								//- img.bottom(src="facebook.png" height="30px" width="30px")
+				
+								//- img.bottom(src="twitter.png" height="30px" width="30px")
+					.row
+						.col-sm-12.center
+							p WinFree.ie 2016
+
+
+		script.
+			window.fbAsyncInit = function() {
+			FB.init({
+			appId      : '680909698714083',
+			xfbml      : true,
+			version    : 'v2.5'
+			});
+			};
+			(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-resource.min.js")
+		script(src="main.js")
+
+
+
+//- extends layout
+
+//- block content
+
+//- 	.container
+//- 		.page-header.text-center
+//- 			h1
+//- 				|  Profile Page
+//- 				a.btn.btn-default.btn-sm(href='/logout') Logout
+//- 				col-sm-6
+//- 		.col-sm-6
+//- 			.well
+//- 				h3.text-primary
+//- 					a.btn.btn-default(href='/unlink/local') Unlink
+//- 					a.btn.btn-default(href='/connect/local') Connect Local
+
+//- 		.col-sm-6
+//- 			.well
+//- 				h3.text-primary
+//- 					span.fa.fa-facebook
+//- 					|  Facebook
+//- 					a.btn.btn-primary(href='/unlink/facebook') Unlink
+//- 					a.btn.btn-primary(href='/connect/facebook') Connect Facebook
+//- 		.row
+//- 			.col-sm-6
+//- 				.well
+//- 					a.btn.btn-primary(href='/video') Watch Today's Videos!
+
+//- 			.col-sm-6
+//- 				.well
+//- 					h3
+//- 					span.fa.fa-user
+//- 					|  Local
+//- 					p
+//- 						strong id
+//- 						| : {{user._id}}
+//- 						br
+//- 						strong id
+//- 						| : user.local.email
+//- 						br
+//- 						strong id
+//- 						| : user.local.password

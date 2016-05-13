@@ -82,6 +82,22 @@ winApp.controller('aboutController', function($scope) {
 	$scope.message = "About Controller"
 });
 
+winApp.controller('profilePlayController', function($scope, $timeout) {
+   $scope.message = "Video Controller";
+
+    $scope.timeInS = 18000;
+    // countdown timer
+    var countDown = function() {
+        var theTime = $scope.timeInS -= 100;
+        var timer = $timeout(countDown, 100)
+            if(theTime === 0) {
+                console.log("done")
+                // $location.path("reference")
+            }
+    }
+
+    $timeout(countDown, 100)});
+
 winApp.controller('formController', function($scope,winFactory) {
 
 	$scope.users = winFactory.users;

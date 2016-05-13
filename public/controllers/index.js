@@ -33,10 +33,12 @@ var indexController = {
 	login: function(req, res) {
 		res.render('login')
 	},
-	
 	landing: function(req, res) {
 		res.render('landing');
 		console.log("this is an landing test")
+	},
+	profilePlay: function(req, res) {
+		res.render('profile-1')
 	}
 }
 

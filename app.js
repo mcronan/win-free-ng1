@@ -47,6 +47,8 @@ app.get('/form', indexController.form);
 app.get('/video', indexController.video);
 app.get('/reference', indexController.reference);
 app.get('/login', indexController.login);
+app.get('/profile-1', indexController.profilePlay);
+
 
 
 
