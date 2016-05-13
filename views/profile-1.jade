@@ -42,23 +42,40 @@ div(ng-controller="profilePlayController")
 				.profile-border.center
 					h3 Raffle Power Bar
 		.row
-			.col-sm-offset-2.col-sm-1
-				h4 3 Days
 			.col-sm-offset-1.col-sm-1
-				h4 7 Days
+				h4
+					strong Streak:
+			.col-sm-1
+				h4 3 days
 			.col-sm-offset-1.col-sm-1
-				h4 10 Days
+				h4 7 days
 			.col-sm-offset-1.col-sm-1
-				h4 15 Days
+				h4 10 days
+			.col-sm-offset-1.col-sm-1
+				h4 15 days
 		.row
 			.col-sm-offset-2.col-sm-8
 				.bar-chart.primary(data-total='76', animated='')
 					span.bar-chart--inner(style='width:75%;') 
 						span.bar-chart--inner-2(style='width:66%;')
 							span.bar-chart--inner-3(style='width:50%;')
-
+		.row
+			.col-sm-offset-1.col-sm-1.odds
+				h4 
+					strong Odds:
+			.col-sm-1.odds
+				h4 x2 
+			.col-sm-offset-1.col-sm-1.odds
+				h4 x4
+			.col-sm-offset-1.col-sm-1.odds
+				h4 x6
+			.col-sm-offset-1.col-sm-1.odds
+				h4 x8
 				
-		
+		br
+		br
+		br
+
 		.row
 			.col-sm-4.side-border.center.block-heights
 				h3.underline Your Odds
@@ -74,7 +91,7 @@ div(ng-controller="profilePlayController")
 				h2 {{timeInS | date:"h:mm:ss"}}
 				p (Before today's videos expire)
 				br
-				a.video-button.bottom(href='/video') Watch Today's Stories!
+				a.video-button.bottom(href='/video') Watch Today's Videos!
 			.col-sm-4.side-border.center.block-heights
 				h3.underline Yesterday's Winner
 				h2 €1,000
