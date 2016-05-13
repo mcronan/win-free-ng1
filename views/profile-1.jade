@@ -40,14 +40,24 @@ div(ng-controller="profilePlayController")
 		.row
 			.col-sm-12
 				.profile-border.center
-					h3 Raffle Bar
+					h3 Raffle Power Bar
+		.row
+			.col-sm-offset-2.col-sm-1
+				h4 3 Days
+			.col-sm-offset-1.col-sm-1
+				h4 7 Days
+			.col-sm-offset-1.col-sm-1
+				h4 10 Days
+			.col-sm-offset-1.col-sm-1
+				h4 15 Days
 		.row
 			.col-sm-offset-2.col-sm-8
 				.bar-chart.primary(data-total='76', animated='')
 					span.bar-chart--inner(style='width:75%;') 
 						span.bar-chart--inner-2(style='width:66%;')
 							span.bar-chart--inner-3(style='width:50%;')
-			//- .col-sm-1 10 Days
+
+				
 		
 		.row
 			.col-sm-4.side-border.center.block-heights
@@ -58,10 +68,11 @@ div(ng-controller="profilePlayController")
 				br
 				h4 <strong>Heating Up </strong> 
 					br
-					| Keep watching videos to increase your streak and improve your odds of winning!
+					| Keep watching videos to increase your streak and improve your chances of winning!
 			.col-sm-4.top-border.center.block-heights
 				h3.underline Today's Video
 				h2 {{timeInS | date:"h:mm:ss"}}
+				p (Before today's videos expire)
 				br
 				a.video-button.bottom(href='/video') Watch Today's Stories!
 			.col-sm-4.side-border.center.block-heights
